@@ -7,16 +7,27 @@ Have you ever had problems coordinating activities with your friends? It seems l
 
 Key Features:
 -Secure login over HTTPS
+
 -Ability to fill out a time slot
+
 -Can paint over which slots are available for you
+
 -Large time table shown below that updates when someone submits a time slot
+
 -Option to save data for future events
+
 -Ability to change or delete entries
 
 Technology:
+
 -HTML - I'd use this as a basic structure to show the Initial Voting Chart, Login Page, and Voting Result Page
+
 -CSS - I'd use this to make sure the interface of voting combined with the interface of the communal chart look well together
+
 -JavaScript - Provides login information page and displays the communal voting chart
+
 -React - Showing someone's personal vote get translated to the communal voting chart
+
 -DB/Login - Holds onto login information and schedule information if desired by the user
+
 -WebSocket - Someone's input on the voting chart is shown in real time to all other users
