@@ -4,3 +4,6 @@ Link to README.md: https://github.com/EMoreno65/startup/blob/main/README.md
 During this assignment I learned how to commit changes to github and how to resolve conflicts when github and my development environment are different. 
 I also learned how to set up a github repository properly.
 
+9/27/24 
+I learned how to use the VS Code Extension to put my progress on a screen where I can navigate and see how the webpage looks in real time.
+
