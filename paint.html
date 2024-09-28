@@ -22,6 +22,8 @@
           <li><a href="about.html">About</a></li>
         </menu>
       </nav>
+
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
       <hr />
     </header>
     <h3>Paint in Available Time Slots</h3>
@@ -34,22 +36,41 @@
     </style>
 </head>
 <body>
-    <button id="toggleButton">12-1</button> 
-    <button id="toggleButton">1-2</button>
-    <button id="toggleButton">2-3</button>
-    <button id="toggleButton">3-4</button>
-    <button id="toggleButton">4-5</button>
-    <button id="toggleButton">5-6</button>
+    <button id="toggleButton1">AM</button> 
+    <button id="toggleButton2">12-1</button>
+    <button id="toggleButton3">1-2</button>
+    <button id="toggleButton4">2-3</button>
+    <button id="toggleButton5">3-4</button>
+    <button id="toggleButton6">4-5</button>
+    <button id="toggleButton7">5-6</button>
     <script>
         const button1 = document.getElementById('toggleButton1');
         button1.addEventListener('click', function() {
             button1.classList.toggle('active'); 
         });
-
-        // Get the second button and add click event listener
         const button2 = document.getElementById('toggleButton2');
         button2.addEventListener('click', function() {
             button2.classList.toggle('active');
+        });
+        const button3 = document.getElementById('toggleButton3');
+        button3.addEventListener('click', function() {
+            button3.classList.toggle('active');
+        });
+        const button4 = document.getElementById('toggleButton4');
+        button4.addEventListener('click', function() {
+            button4.classList.toggle('active');
+        });
+        const button5 = document.getElementById('toggleButton5');
+        button5.addEventListener('click', function() {
+            button5.classList.toggle('active');
+        });
+        const button6 = document.getElementById('toggleButton6');
+        button6.addEventListener('click', function() {
+            button6.classList.toggle('active');
+        });
+        const button7 = document.getElementById('toggleButton7');
+        button7.addEventListener('click', function() {
+            button7.classList.toggle('active');
         });
     </script>
 </body>
