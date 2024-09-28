@@ -46,4 +46,4 @@ For this deliverable I built out the structure of my application using HTML.
  
  -DB/Login - Input box and submit button for login. The painted time slots are what represents the data pulled from the database.
  
- -WebSocket - The appearance of hihglighted times in the main schedule are represented through the websocket.
+ -WebSocket - The appearance of hihglighted times in the main schedule are represented through the websocket
