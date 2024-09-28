@@ -1,33 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simon</title>
     <link rel="icon" href="favicon.ico" />
-  </head>
-  <body>
-    <!-- Use header, main, and footer elements to give semantic structure -->
-    <header>
-      <h1>Simon<sup>&reg;</sup></h1>
-
-      <!-- Navigation elements -->
-      <nav>
-        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
-        <menu>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="filters.html">Set Filters</a></li>
-          <li><a href="paint.html">Coordinate a Time</a></li>
-          <li><a href="about.html">About</a></li>
-        </menu>
-      </nav>
-
-      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
-      <hr />
-    </header>
-    <h3>Paint in Available Time Slots</h3>
-    <title>Toggle Button Color</title>
     <style>
         button.active {
             background-color: green;
@@ -36,6 +13,20 @@
     </style>
 </head>
 <body>
+    <header>
+        <h1>Simon<sup>&reg;</sup></h1>
+        <nav>
+            <menu>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="filters.html">Set Filters</a></li>
+                <li><a href="paint.html">Coordinate a Time</a></li>
+                <li><a href="about.html">About</a></li>
+            </menu>
+        </nav>
+        <hr />
+    </header>
+
+    <h3>Paint in Available Time Slots</h3>
     <button id="toggleButton1">AM</button> 
     <button id="toggleButton2">12-1</button>
     <button id="toggleButton3">1-2</button>
@@ -43,34 +34,33 @@
     <button id="toggleButton5">3-4</button>
     <button id="toggleButton6">4-5</button>
     <button id="toggleButton7">5-6</button>
+
     <script>
-        const button1 = document.getElementById('toggleButton1');
-        button1.addEventListener('click', function() {
-            button1.classList.toggle('active'); 
-        });
-        const button2 = document.getElementById('toggleButton2');
-        button2.addEventListener('click', function() {
-            button2.classList.toggle('active');
-        });
-        const button3 = document.getElementById('toggleButton3');
-        button3.addEventListener('click', function() {
-            button3.classList.toggle('active');
-        });
-        const button4 = document.getElementById('toggleButton4');
-        button4.addEventListener('click', function() {
-            button4.classList.toggle('active');
-        });
-        const button5 = document.getElementById('toggleButton5');
-        button5.addEventListener('click', function() {
-            button5.classList.toggle('active');
-        });
-        const button6 = document.getElementById('toggleButton6');
-        button6.addEventListener('click', function() {
-            button6.classList.toggle('active');
-        });
-        const button7 = document.getElementById('toggleButton7');
-        button7.addEventListener('click', function() {
-            button7.classList.toggle('active');
-        });
+        for (let i = 1; i <= 7; i++) {
+            const button = document.getElementById(`toggleButton${i}`);
+            button.addEventListener('click', function() {
+                button.classList.toggle('active');
+            });
+        }
     </script>
+
+    <br>
+    <button id="toggleButton8">AM</button> 
+    <button id="toggleButton9">6-7</button>
+    <button id="toggleButton10">7-8</button>
+    <button id="toggleButton11">8-9</button>
+    <button id="toggleButton12">9-10</button>
+    <button id="toggleButton13">10-11</button> 
+    <button id="toggleButton14">11-12</button> 
+
+    <script>
+        for (let i = 8; i <= 14; i++) {
+            const button = document.getElementById(`toggleButton${i}`);
+            button.addEventListener('click', function() {
+                button.classList.toggle('active');
+            });
+        }
+    </script>
+
 </body>
+</html>
