@@ -15,3 +15,9 @@ I learned how to create a button that triggers certain code when an action is pe
 
 9/27/24 
 I learned that we can use br to break up a line. I also learned we can use for loops to trigger functions when certain actions are done
+
+9/28/24
+I learned how to insert an image into a file on a webpage.
+
+9/28/24 
+I learned how to make a button type "submit" to make a button move a page from one page to another
