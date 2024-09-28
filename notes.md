@@ -9,3 +9,6 @@ I learned how to use VS Code Live Server Extension to monitor my HTML webpage th
 
 9/27/24
 I learned how to create a dropdown menu through using "label" and "select" as borders
+
+9/27/24
+I learned how to create a button that triggers certain code when an action is performed. In this case, I taught it to turn green when I clicked the button. I think this will be very useful for later on in my development. 
