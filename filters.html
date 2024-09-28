@@ -17,8 +17,8 @@
         <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
         <menu>
           <li><a href="index.html">Home</a></li>
-          <li><a href="play.html">Play</a></li>
-          <li><a href="scores.html">Scores</a></li>
+          <li><a href="filters.html">Set Filters</a></li>
+          <li><a href="paint.html">Coordinate a Time</a></li>
           <li><a href="about.html">About</a></li>
         </menu>
       </nav>
@@ -28,15 +28,46 @@
     </header>
 
     <main>
-      <div class="players">
-        Player:
-        <span class="player-name">Mystery player</span>
+      <div class="filters">
+        Filters:
+        <span class="alloted_time">Please Specify for your alloted time</span>
       </div>
-      <ul class="notification">
-        <li class="player-name">Tim started a new game</li>
+      <ul class="allfilters">
+        <li class="how_much_time">How much Time Needed</li>
+        <form>
+          <label for="hours">Choose how much time:</label>
+          <select id="hours" name="hours">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+          </select>
+          <button type="submit">Submit</button>
+      </form>
         <li class="player-name">Ada started a new game</li>
         <li class="player-name">Tim scored 337</li>
       </ul>
+
+      <h1>Select Your Favorite Fruit</h1>
+    <form>
+        <label for="fruits">Choose a fruit:</label>
+        <select id="fruits" name="fruits">
+            <option value="apple">Apple</option>
+            <option value="banana">Banana</option>
+            <option value="cherry">Cherry</option>
+            <option value="date">Date</option>
+            <option value="grape">Grape</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
 
       <!-- More formatting with old style HTML -->
       <br />
