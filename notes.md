@@ -12,3 +12,6 @@ I learned how to create a dropdown menu through using "label" and "select" as bo
 
 9/27/24
 I learned how to create a button that triggers certain code when an action is performed. In this case, I taught it to turn green when I clicked the button. I think this will be very useful for later on in my development. 
+
+9/27/24 
+I learned that we can use br to break up a line. I also learned we can use for loops to trigger functions when certain actions are done
