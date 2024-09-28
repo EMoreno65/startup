@@ -36,9 +36,14 @@ HTML Deliverable
 
 For this deliverable I built out the structure of my application using HTML.
 
- HTML pages - Four HTML pages. One for logging in, one for the about tab, one to set filters, and one to vote for time slots. 
- Links - The login page automatically links to the filter page which then links back to the login page and to the time display page.
- Text - Each of the time slot choices is represented by a labeled button.
- Images - I linked an image in the about page to show the theme of the web application.
- DB/Login - Input box and submit button for login. The painted time slots are what represents the data pulled from the database.
- WebSocket - The appearance of hihglighted times in the main schedule are represented through the websocket.
+ -HTML pages - Four HTML pages. One for logging in, one for the about tab, one to set filters, and one to vote for time slots. 
+
+ -Links - The login page automatically links to the filter page which then links back to the login page and to the time display page.
+ 
+ -Text - Each of the time slot choices is represented by a labeled button.
+ 
+ -Images - I linked an image in the about page to show the theme of the web application.
+ 
+ -DB/Login - Input box and submit button for login. The painted time slots are what represents the data pulled from the database.
+ 
+ -WebSocket - The appearance of hihglighted times in the main schedule are represented through the websocket.
