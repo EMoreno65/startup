@@ -21,3 +21,6 @@ I learned how to insert an image into a file on a webpage.
 
 9/28/24 
 I learned how to make a button type "submit" to make a button move a page from one page to another
+
+9/28/24 - CSS Practice
+I learned how to set padding and margins for backgrounds on certain sections of a webpage. I also learned how to integrate animations. 
