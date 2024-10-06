@@ -24,3 +24,6 @@ I learned how to make a button type "submit" to make a button move a page from o
 
 9/28/24 - CSS Practice
 I learned how to set padding and margins for backgrounds on certain sections of a webpage. I also learned how to integrate animations. 
+
+10/5/24
+I learned how to set my font size and position in CSS, I use font size and align items to adjust the settings. I also learned flex 0 means the page i fixed while any non zero number means it can be adjusted by the respective unit. 
