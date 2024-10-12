@@ -32,7 +32,7 @@ Technology:
 
 -WebSocket - Someone's input on the voting chart is shown in real time to all other users
 
-HTML Deliverable
+**<u>HTML Deliverable</u>**
 
 For this deliverable I built out the structure of my application using HTML.
 
