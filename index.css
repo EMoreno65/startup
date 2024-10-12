@@ -1,28 +1,28 @@
 body {
-  background-color: rgb(221, 195, 213); /* Set a background color */
-  text-align: center; /* Center text in the body */
+  background-color: rgb(221, 195, 213); 
+  text-align: center; 
 }
 
 header {
-  margin-bottom: 2em; /* Space below the header */
+  margin-bottom: 2em; 
 }
 
 main {
-  margin: 0 auto; /* Center the main content */
-  width: 80%; /* Set a max width */
-  max-width: 600px; /* Max width for larger screens */
+  margin: 0 auto; 
+  width: 80%; 
+  max-width: 600px; 
 }
 
 form {
-  display: flex; /* Use flexbox for alignment */
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center elements horizontally */
-  gap: 1em; /* Space between form elements */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  gap: 1em; 
 }
 
 button {
-  margin: 0.5em; /* Space around buttons */
-  padding: 0.5em 1em; /* Padding inside buttons */
+  margin: 0.5em; 
+  padding: 0.5em 1em; 
   border: 2px solid transparent; 
   border-radius: 8px; 
   background-color: white; 
@@ -31,5 +31,5 @@ button {
 }
 
 button:hover {
-  background-color: lightblue; /* Change background on hover */
+  background-color: lightblue;
 }
