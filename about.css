@@ -1,0 +1,25 @@
+#picture {
+    height: calc(75px + 1em);
+    margin-bottom: 1em;
+    padding: 1em;
+    background: rgb(21, 79, 25);
+    border-radius: 5px;
+}
+
+#picture img {
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+}
+
+p {
+    font-size: 1.2em; 
+    font-style: italic; 
+    margin-top: 1em;
+}
