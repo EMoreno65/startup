@@ -1,3 +1,35 @@
 body {
-    background-color: red !important;
-  }
+  background-color: rgb(221, 195, 213); /* Set a background color */
+  text-align: center; /* Center text in the body */
+}
+
+header {
+  margin-bottom: 2em; /* Space below the header */
+}
+
+main {
+  margin: 0 auto; /* Center the main content */
+  width: 80%; /* Set a max width */
+  max-width: 600px; /* Max width for larger screens */
+}
+
+form {
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center elements horizontally */
+  gap: 1em; /* Space between form elements */
+}
+
+button {
+  margin: 0.5em; /* Space around buttons */
+  padding: 0.5em 1em; /* Padding inside buttons */
+  border: 2px solid transparent; 
+  border-radius: 8px; 
+  background-color: white; 
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+  background-color: lightblue; /* Change background on hover */
+}
