@@ -47,3 +47,11 @@ For this deliverable I built out the structure of my application using HTML.
  -DB/Login - Input box and submit button for login. The painted time slots are what represents the data pulled from the database.
  
  -WebSocket - The appearance of hihglighted times in the main schedule are represented through the websocket
+
+ **<u>CSS Deliverable</u>**
+
+ For this deliverable, I built some style elements into my application using CSS.
+
+ -Header, Footer, and Main Content Body - I focused on centering these bodies of text and adjusting their margins so they were better spaced and more natural to the user.
+
+ -Navigation Elements - I changed the background color and bordering colors of various buttons and got rid of bullet points for the four main pages.
