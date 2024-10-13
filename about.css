@@ -1,5 +1,5 @@
 #picture {
-    height: calc(75px + 1em);
+    height: calc(75px + 1em); /*The em should make it responsive to window resizing*/
     margin-bottom: 1em;
     padding: 1em;
     background: rgb(21, 79, 25);
