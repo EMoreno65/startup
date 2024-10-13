@@ -31,3 +31,6 @@ I learned how to set my font size and position in CSS, I use font size and align
 10/12/24
 So I learned we need to work within the headers, body, etc to apply our changes. For one file, I couldn't center the 4 page options because I forgot it didn't have its own div section. So I need to be conscious of that
 I learned from the JS arrays that we use i => and then some kinda modification or test of i. This will be very useful for knowing how to implement logic in web development. 
+
+10/12/24
+I also learned we need to use button.active in order to be sure that a stylistic choice will execute upon the clicking of a button
