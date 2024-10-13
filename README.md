@@ -55,3 +55,11 @@ For this deliverable I built out the structure of my application using HTML.
  -Header, Footer, and Main Content Body - I focused on centering these bodies of text and adjusting their margins so they were better spaced and more natural to the user.
 
  -Navigation Elements - I changed the background color and bordering colors of various buttons and got rid of bullet points for the four main pages.
+
+ -Window Resizing - The application still can be effectively navigated when found from various window sizes. 
+
+ -Application Elements - I used margins and padding between text to make the system look better as well as carefully spacing my button time slots in my paint page. 
+
+ -Application Text Content - All my text is structured in a way that the user will know what is a title and what serves as details. I did this through using h3 fot important text. 
+
+ -Application Images - I have an image and used a border that matches the image to help it stand out with the contrast of the background of that page. 
