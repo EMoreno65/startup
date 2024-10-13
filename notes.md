@@ -34,3 +34,6 @@ I learned from the JS arrays that we use i => and then some kinda modification o
 
 10/12/24
 I also learned we need to use button.active in order to be sure that a stylistic choice will execute upon the clicking of a button
+
+10/12/24
+I learned that li elements create the bullet points. So I changed them to being h3 elements instead.
