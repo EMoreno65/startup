@@ -25,5 +25,18 @@ body {
     cursor: pointer;
   }
 
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
   
+  button:hover {
+    background-color: #45a049;
+  }
   
