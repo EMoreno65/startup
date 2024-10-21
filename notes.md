@@ -120,3 +120,102 @@ document.getElementById("myButton").addEventListener("click", function() {
 The addEventListener is meant to run the function if the button is clicked
 
 #selectors? These basically pick out an element by its ID from a query (document.querySelector("#title")) selects the element with the matching ID
+
+Information about the DOM
+Object representation of html elements
+Document points to the root element of the DOM
+Every element makes a node on the DOM
+DOM element interface helps to iterate through child elements and access parent elements
+queryselectorall can select elements from the document
+Can insert, modify, and delete elements in the DOM
+function insertChild(parentSelector, text) {
+  const newChild = document.createElement('div');
+  newChild.textContent = text;
+
+  const parentElement = document.querySelector(parentSelector);
+  parentElement.appendChild(newChild);
+}
+
+insertChild('#courses', 'new course');
+To delete elements call the removeChild function on the parent element.
+
+function deleteElement(elementSelector) {
+  const el = document.querySelector(elementSelector);
+  el.parentElement.removeChild(el);
+}
+
+deleteElement('#courses div');
+
+Cited from notes ^^^
+
+You can inject entire blocks of html into an element in the DOM
+
+DOMs have addEventListener functions
+
+DOMs have an onclick function
+
+By default, the HTML span element has a default CSS display property value of: (inline) <- make sure they avoid taking up more than one line
+
+How would you use CSS to change all the div elements to have a background color of red? Make a style block inside the head that has a div block with its only feature being background-color: red
+
+How would you display an image with a hyperlink in HTML? 
+
+<img alt="mountain landscape" src="https://images.pexels.com/photos/164170/pexels-photo-164170.jpeg" /> This is the format to include one
+
+In the CSS box model, what is the ordering of the box layers starting at the inside and working out? - Content, Padding, Border, Margin -> From innermost to outermost
+
+Given the following HTML, what CSS would you use to set the text "trouble" to green and leave the "double" text unaffected? - Wrap it in a span class like this <p>This is a <span class="highlight">trouble</span> and double text.</p> Make a style element in the head that sets the color to green like this <style>
+    .highlight {
+      color: green; /* Set text color to green */
+    }
+  </style>
+
+What will the following code output when executed using a for loop and console.log? You can read the code and figure this out
+const byu = document.getElementByID("byu")
+You would set a const element to getElementByID("byu") to get the element. Then you'd say byu.style.color = "green"
+
+What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading? 
+Paragraph = <p></p>
+Ordered List = <ol></ol>
+Unordered List = <ul></ul>
+Second Level Heading = <h2></h2>
+First level heading = <h1></h1>
+Third level heading = <h3></h3>
+
+How to declare document type to be html? <!DOCTYPE html>
+
+What is valid javascript syntax for if, else, for, while, switch statements?
+
+Example if-else: if (x > 10) {
+    console.log("x is greater than 10");
+} else {
+    console.log("x is 10 or less");
+}
+
+For Loop:
+for (let i = 0; i < 5; i++) {
+    console.log(i); 
+}
+0,1,2,3,4
+
+While:
+while (i < 5) {
+    console.log(i); 
+    i++;
+}
+
+Switch:
+switch (fruit) {
+    case "banana":
+        console.log("Banana is yellow.");
+        break;
+    case "apple":
+        console.log("Apple is red or green.");
+        break;
+    default:
+        console.log("Unknown fruit.");
+}
+
+
+What is the correct syntax for creating a javascript object?
+
