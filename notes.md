@@ -160,7 +160,7 @@ How would you use CSS to change all the div elements to have a background color 
 
 How would you display an image with a hyperlink in HTML? 
 
-<img alt="mountain landscape" src="https://images.pexels.com/photos/164170/pexels-photo-164170.jpeg" /> This is the format to include one
+<img alt="mountain landscape"  Then you do this -> src="https://images.pexels.com/photos/164170/pexels-photo-164170.jpeg" /> This is the format to include one
 
 In the CSS box model, what is the ordering of the box layers starting at the inside and working out? - Content, Padding, Border, Margin -> From innermost to outermost
 
@@ -219,3 +219,42 @@ switch (fruit) {
 
 What is the correct syntax for creating a javascript object?
 
+const obj = new Object({ a: 3 });
+obj['b'] = 'fish';
+obj.c = [1, 2, 3];
+obj.hello = function () {
+  console.log('hello');
+};
+
+console.log(obj);
+// OUTPUT: {a: 3, b: 'fish', c: [1,2,3], hello: func} This is how you create a new object in javascript according to the class notes
+
+You can add new properties, you do that by seeing the above code and how it is demonstrated
+
+If you want to include JavaScript on an HTML page, which tag do you use? - You use the script tag, and put in javascript code or link a java file like so, <script src="script.js" defer></script>
+
+You use getElementByID again, like so const animalElement = 
+document.getElementById("animal");
+animalElement.textContent = "crow";
+
+Information about JSON
+-Compatible with javascript
+-Contains object with key-value pairs
+-Stringify creates a json from a js object
+-Parse creates a js object from a json
+
+An example JSON:
+
+{
+  "class": {
+    "title": "web programming",
+    "description": "Amazing"
+  },
+  "enrollment": ["Marco", "Jana", "فَاطِمَة"],
+  "start": "2025-02-01",
+  "end": null
+}
+
+What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo  do?
+chmod - changes file permissions
+pwd - prints current working directory
