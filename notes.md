@@ -258,3 +258,53 @@ An example JSON:
 What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo  do?
 chmod - changes file permissions
 pwd - prints current working directory
+cd - Change directory
+ls - list directory contents
+vim - open vim text editor
+nano - open nano text editor
+mkdir - create new directory
+mv - move or rename files mv [source] [destination]
+rm - remove files
+man - display command manuel
+ssh - securely connect to a remote machine
+ps - display running processes
+wget - download files from web wget [url]
+sudo - execute command with super user privileges
+
+remote shell session - ssh, rsh, rlogin, telnet, screen
+
+ls -la lists all files and content including hidden ones
+banana.fruit.bozo.click
+root domain - bozo.click
+TLD - .click
+Subdomains Banana and fruit, banana is a subdomain of fruit
+
+To use https, a web certificate is necessary - provides encryption and verifies identity of the website
+
+Can a DNS A record can point to an IP address or another A record. - It can only point to an IP address, not another record.
+
+Port 443, 80, 22 is reserved for which protocol? - 
+80 is default port for http
+443 is default port for https
+Port 22 is used for ssh
+
+Promises - Pending, fulfilled, or rejected
+Takes in resolve and reject
+
+const myPromise = new Promise((resolve, reject) => {
+    if (/* operation successful */) {
+        resolve(value); 
+    } else {
+        reject(error); 
+    }
+});
+
+You can use then/catch with promises:
+
+myPromise
+    .then(result => {
+        console.log("Success:", result);
+    })
+    .catch(error => {
+        console.log("Error:", error);
+    });
