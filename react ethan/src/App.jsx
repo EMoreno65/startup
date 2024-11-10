@@ -1,42 +1,52 @@
 import React from 'react';
+import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+import Filters from './filters/filters'; // Import Filters component
+import Index from './index/index'; // Assuming Index component exists
+import About from './about/about'; // Assuming About component exists
+import Paint from './paint/paint'; // Assuming Paint component exists
 
+const AuthState = {
+  Authenticated: 'authenticated',
+  Unauthenticated: 'unauthenticated',
+};
+
+function App() {
   const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
   const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
   const [authState, setAuthState] = React.useState(currentAuthState);
 
   return (
     <BrowserRouter>
-      <div className='body bg-dark text-light'>
+      <div className='bg-dark text-light'>
         <header className='container-fluid'>
-          <nav className='navbar fixed-top navbar-dark'>
+          <nav className='navbar navbar-dark'>
             <div className='navbar-brand'>
               Simon<sup>&reg;</sup>
             </div>
             <menu className='navbar-nav'>
               <li className='nav-item'>
-                <NavLink className='nav-link' to='index'>
+                <NavLink className='nav-link' to='/index'>
                   Index
                 </NavLink>
               </li>
               {authState === AuthState.Authenticated && (
                 <li className='nav-item'>
-                  <NavLink className='nav-link' to='filters'>
+                  <NavLink className='nav-link' to='/filters'>
                     Filters
                   </NavLink>
                 </li>
               )}
               {authState === AuthState.Authenticated && (
                 <li className='nav-item'>
-                  <NavLink className='nav-link' to='paint'>
+                  <NavLink className='nav-link' to='/paint'>
                     Paint
                   </NavLink>
                 </li>
               )}
               <li className='nav-item'>
-                <NavLink className='nav-link' to='about'>
+                <NavLink className='nav-link' to='/about'>
                   About
                 </NavLink>
               </li>
@@ -57,11 +67,10 @@ function App() {
                 }}
               />
             }
-            exact
           />
           <Route path='/index' element={<Index userName={userName} />} />
           <Route path='/about' element={<About />} />
-          <Route path='/filters' element={<Filters />} />
+          <Route path='/filters' element={<Filters />} /> {/* Filters Route */}
           <Route path='/paint' element={<Paint />} />
         </Routes>
 
@@ -76,6 +85,7 @@ function App() {
       </div>
     </BrowserRouter>
   );
+}
 
   // return (
   //   <div>
@@ -122,7 +132,6 @@ function App() {
   //     </footer>
   //   </div>
   // );
-}
 
 // function App() {
 //   return (
