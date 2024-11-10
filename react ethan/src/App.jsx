@@ -1,11 +1,14 @@
 import React from 'react';
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
-import { Index } from './index/index';
-import { About } from './about/about';
-import { Filters } from './filters/filters';
-import { Paint } from './paint/paint';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './app.css';
+
+// function App() {
+//   return (
+//     <div>
+//       <h1>Welcome to My React App</h1>
+//       <p>This is a test paragraph to ensure rendering works.</p>
+//     </div>
+//   );
+// }
+
 
 function App() {
   const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
