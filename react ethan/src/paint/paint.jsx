@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 
-function Paint() {
+export function Paint() {
   // Create a state object to track which buttons are active
   const [activeButtons, setActiveButtons] = useState({});
 
@@ -29,14 +29,14 @@ function Paint() {
     <div>
       <header>
         <h1>Ethan<sup>&reg;</sup></h1>
-        <nav>
+        {/* <nav>
           <menu>
             <a href="index.html">Home</a>
             <a href="filters.html">Set Filters</a>
             <a href="paint.html">Coordinate a Time</a>
             <a href="about.html">About</a>
           </menu>
-        </nav>
+        </nav> */}
         <hr />
       </header>
 
@@ -98,4 +98,3 @@ function Paint() {
   );
 }
 
-export default Paint;

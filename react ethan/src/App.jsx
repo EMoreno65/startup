@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Filters from './filters/filters.jsx';
-import Index from './index/index.jsx'; 
-import About from './about/about.jsx';
-import Paint from './paint/paint.jsx'; 
+import { Filters } from './filters/filters';
+import { Index } from './index/index'; 
+import { About } from './about/about';
+import { Paint } from './paint/paint'; 
 
 const AuthState = {
   Authenticated: 'authenticated',

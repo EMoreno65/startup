@@ -1,6 +1,6 @@
 import React from 'react';
 
-function About() {
+export function About() {
   return (
     <div>
       <header>
@@ -8,14 +8,14 @@ function About() {
           Ethan Clement<sup>&reg;</sup>
         </h1>
 
-        <nav>
+        {/* <nav>
           <menu>
             <a href="index.html">Home</a>
             <a href="filters.html">Set Filters</a>
             <a href="paint.html">Coordinate a Time</a>
             <a href="about.html">About</a>
           </menu>
-        </nav>
+        </nav> */}
 
         <hr />
       </header>
@@ -45,5 +45,3 @@ function About() {
     </div>
   );
 }
-
-export default About;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Filters = () => {
+export function Filters() {
     const [hours, setHours] = useState('');
     const [people, setPeople] = useState('');
     const [timeOfDay, setTimeOfDay] = useState('');
@@ -16,14 +16,14 @@ const Filters = () => {
                 <h1>Filters<sup>&reg;</sup></h1>
 
                 {/* Navigation */}
-                <nav>
+                {/* <nav>
                     <menu>
                         <a href="index.html">Home</a>
                         <a href="filters.html">Set Filters</a>
                         <a href="paint.html">Coordinate a Time</a>
                         <a href="about.html">About</a>
                     </menu>
-                </nav>
+                </nav> */}
                 <hr />
             </header>
 
@@ -101,5 +101,3 @@ const Filters = () => {
         </div>
     );
 };
-
-export default Filters;
