@@ -1,32 +1,25 @@
-button {
-    margin: 0.5em; 
-    padding: 1em; 
-    border: 2px solid transparent; 
-    border-radius: 8px; 
-    background-color: white; 
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
-}
-
-button.active {
-    border-color: blue;
-    background-color: lightblue;
-    color: black;
-}
-
-.button-container {
+.button-row {
     display: flex;
-    flex-wrap: wrap;        
-    justify-content: center; 
-    align-items: center;     
-    gap: 0.5em;             
-    margin-bottom: 2em;     
-}
-
-h3 {
-    text-align: center; 
-}
-
-body {
-    background-color: aliceblue;
-}
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.active {
+    background-color: #4caf50; /* Green for active state */
+    color: white;
+    border-color: #4caf50;
+  }
+  
+  button:hover {
+    background-color: #ddd;
+  }
