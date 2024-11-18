@@ -39,31 +39,22 @@ export function Index({ userName, authState, onAuthChange }) {
         <hr />
       </header>
 
-      {/* Main Content */}
-      <main className="my-4">
-        {authState !== AuthState.Unknown && (
-          <h1>Welcome to Ethan's Website - Time Slot Machine</h1>
-        )}
 
-        {/* Show Authenticated or Unauthenticated views */}
-        {authState === AuthState.Authenticated && (
-          <Authenticated
-            userName={userName}
-            onLogout={() => onAuthChange(userName, AuthState.Unauthenticated)}
-          />
-        )}
-
-        {authState === AuthState.Unauthenticated && (
-          <Unauthenticated
-            userName={userName}
-            onLogin={(loginUserName) => {
-              onAuthChange(loginUserName, AuthState.Authenticated);
-              navigate('/filters'); // Redirect after successful login
-            }}
-          />
-        )}
-
-        {authState === AuthState.Unknown && <p>Loading...</p>}
+      <main className='container-fluid bg-secondary text-center'>
+        <div>
+          {authState !== AuthState.Unknown && <h1>Welcome to Ethan's Time Slot Machine</h1>}
+          {authState === AuthState.Authenticated && (
+            <Authenticated userName={userName} onLogout={() => onAuthChange(userName, AuthState.Unauthenticated)} />
+          )}
+          {authState === AuthState.Unauthenticated && (
+            <Unauthenticated
+              userName={userName}
+              onLogin={(loginUserName) => {
+                onAuthChange(loginUserName, AuthState.Authenticated);
+              }}
+            />
+          )}
+        </div>
       </main>
 
       {/* Footer Section */}

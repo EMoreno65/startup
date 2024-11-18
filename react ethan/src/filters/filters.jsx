@@ -30,12 +30,12 @@ export function Filters() {
             <main>
                 <div className="filters">
                     <p>Filters:</p>
-                    <span className="alloted_time">Please Specify for your alloted time</span>
+                    <span className="alloted_time">Please Specify for your alloted time </span>
                 </div>
 
                 <form onSubmit={handleSubmit}>
                     <h3>How much Time Needed</h3>
-                    <label htmlFor="hours">Choose how many hours:</label>
+                    <label htmlFor="hours">Choose how many hours: </label>
                     <select
                         id="hours"
                         name="hours"
@@ -49,8 +49,8 @@ export function Filters() {
                         ))}
                     </select>
                     <br />
-                    <h3>Number of people that need to agree</h3>
-                    <label htmlFor="people">Choose how many people:</label>
+                    <h3>Number of people that need to agree </h3>
+                    <label htmlFor="people">Choose how many people: </label>
                     <select
                         id="people"
                         name="people"
@@ -64,8 +64,8 @@ export function Filters() {
                         ))}
                     </select>
                     <br />
-                    <h3>What time of day is preferred?</h3>
-                    <label htmlFor="time-of-day">Choose when in the day:</label>
+                    <h3>What time of day is preferred? </h3>
+                    <label htmlFor="time-of-day">Choose when in the day: </label>
                     <select
                         id="time-of-day"
                         name="time-of-day"
@@ -83,7 +83,7 @@ export function Filters() {
 
                 <div className="button-container">
                     <form method="get" action="paint.html">
-                        <button type="submit">Proceed to Time Selection</button>
+                        <button type="submit">Proceed to Time Selection </button>
                     </form>
 
                     <form method="get" action="index.html">
