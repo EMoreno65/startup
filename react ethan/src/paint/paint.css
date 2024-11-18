@@ -15,7 +15,7 @@
   }
   
   button.active {
-    background-color: #4caf50; /* Green for active state */
+    background-color: #4caf50; 
     color: white;
     border-color: #4caf50;
   }

@@ -1,18 +1,32 @@
 import React, { useState } from 'react';
-import './Paint.css'; // Ensure you have CSS for the "active" class.
+import './Paint.css'; 
 
 export function Paint() {
-  // State to track active buttons by label
+  
   const [activeButtons, setActiveButtons] = useState({});
+  const [recommendedTime, setRecommendedTime] = useState('');
 
   const toggleButton = (buttonLabel) => {
-    setActiveButtons((prevState) => ({
-      ...prevState,
-      [buttonLabel]: !prevState[buttonLabel], // Toggle the state of the button by its label
-    }));
+    setActiveButtons((prevState) => {
+      const updatedState = {
+        ...prevState,
+        [buttonLabel]: !prevState[buttonLabel], 
+      };
+
+      if (!prevState[buttonLabel]) {
+        setRecommendedTime(buttonLabel); 
+      } else {
+        const activeTimes = Object.keys(updatedState).filter(
+          (label) => updatedState[label]
+        );
+        const latestTime = activeTimes[activeTimes.length - 1] || '';
+        setRecommendedTime(latestTime);
+      }
+
+      return updatedState;
+    });
   };
 
-  // Button groups (first 4 rows and bottom 4 rows)
   const buttonGroups = [
     ['AM', '12-1', '1-2', '2-3', '3-4', '4-5', '5-6'],
     ['AM', '6-7', '7-8', '8-9', '9-10', '10-11', '11-12'],
@@ -64,7 +78,12 @@ export function Paint() {
       <div className="button-container">
         <button type="submit">Submit</button>
         <span>Recommended Time:</span>
-        <input type="text" placeholder="Time will be calculated here" />
+        <input
+          type="text"
+          placeholder="Time will be calculated here"
+          value={recommendedTime}
+          readOnly
+        />
       </div>
 
       <footer>
@@ -76,5 +95,6 @@ export function Paint() {
     </div>
   );
 }
+
 
 
