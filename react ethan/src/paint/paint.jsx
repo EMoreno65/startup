@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Paint.css'; 
+import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
 
 export function Paint() {
   
@@ -37,7 +38,7 @@ export function Paint() {
   return (
     <div>
       <header>
-        <h1>Ethan<sup>&reg;</sup></h1>
+        <h1>Find Your Time<sup>&reg;</sup></h1>
         <hr />
       </header>
 
@@ -76,7 +77,9 @@ export function Paint() {
       </div>
 
       <div className="button-container">
-        <button type="submit">Submit</button>
+        <NavLink className='nav-link' to='/filters'>
+          Go Back
+        </NavLink>
         <span>Recommended Time:</span>
         <input
           type="text"
