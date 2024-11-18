@@ -2,13 +2,13 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Unauthenticated } from './unauthenticated';
 import { Authenticated } from './authenticated';
-import { AuthState } from './authState';
+import { AuthState } from '../App.jsx'
 
 export function Index({ userName, authState, onAuthChange }) {
   const navigate = useNavigate();
 
   return (
-    <div className="container-fluid bg-secondary text-center">
+    <main className="container-fluid bg-secondary text-center">
       {/* Header Section */}
       <header className="bg-dark text-white py-3">
         <h1>Ethan Clement<sup>&reg;</sup></h1>
@@ -19,7 +19,7 @@ export function Index({ userName, authState, onAuthChange }) {
                 Home
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link text-white" href="/filters">
                 Set Filters
               </a>
@@ -28,7 +28,7 @@ export function Index({ userName, authState, onAuthChange }) {
               <a className="nav-link text-white" href="/paint">
                 Coordinate a Time
               </a>
-            </li>
+            </li> */}
             <li className="nav-item">
               <a className="nav-link text-white" href="/about">
                 About
@@ -38,9 +38,6 @@ export function Index({ userName, authState, onAuthChange }) {
         </nav>
         <hr />
       </header>
-
-
-      <main className='container-fluid bg-secondary text-center'>
         <div>
           {authState !== AuthState.Unknown && <h1>Welcome to Ethan's Time Slot Machine</h1>}
           {authState === AuthState.Authenticated && (
@@ -55,9 +52,6 @@ export function Index({ userName, authState, onAuthChange }) {
             />
           )}
         </div>
-      </main>
-
-      {/* Footer Section */}
       <footer className="bg-dark text-white py-3">
         <hr />
         <p className="mb-1">Ethan Moreno</p>
@@ -68,6 +62,6 @@ export function Index({ userName, authState, onAuthChange }) {
           GitHub
         </a>
       </footer>
-    </div>
+    </main>
   );
 }

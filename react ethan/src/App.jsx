@@ -7,9 +7,10 @@ import { Index } from './index/index';
 import { About } from './about/about';
 import { Paint } from './paint/paint'; 
 
-const AuthState = {
+export const AuthState = {
   Authenticated: 'authenticated',
   Unauthenticated: 'unauthenticated',
+  Unknown: 'unknown'
 };
 
 function App() {
