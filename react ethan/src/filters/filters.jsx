@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
 
 export function Filters() {
     const [hours, setHours] = useState('');
@@ -81,14 +82,13 @@ export function Filters() {
                     <button type="submit">Submit Filters</button>
                 </form>
 
-                <div className="button-container">
-                    <form method="get" action="paint.html">
-                        <button type="submit">Proceed to Time Selection </button>
-                    </form>
-
-                    <form method="get" action="index.html">
-                        <button type="submit">Go Back</button>
-                    </form>
+                <div className='navbar-nav'>
+                <NavLink className='nav-link' to='/paint'>
+                    Proceed to Time Selection
+                </NavLink>
+                <NavLink className='nav-link' to='/index'>
+                Go Back
+                </NavLink>
                 </div>
             </main>
 
