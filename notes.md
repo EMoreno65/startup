@@ -308,3 +308,9 @@ myPromise
     .catch(error => {
         console.log("Error:", error);
     });
+
+React Startup
+
+- I learned I could use a NavLink which imports from react router dom to serve as a routing button
+- I learned I can synchronize buttons by setting an active buttons list
+- I learned how to use useState and setting authenticated and unauthenticated to make certain functions happen only in different states
