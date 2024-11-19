@@ -1,5 +1,7 @@
 Elevator Pitch: Have you ever had problems coordinating activities with your friends? It seems like whether it's school, work, meetings, or whatever else it always takes forever to find a time where everyone can meet up. The Time Slot Machine takes this process and makes it quick and easy. Through this system, everyone puts in their available times into the phone, and through this process, the system picks the best possible time when everyone can meet without everyone needing to deal with figuring it out. It even has filters including the needed time allotment, preference for mornings, afternoons, or nights, and the required number of people needed in that time slot.
 
+![367653126-4343cc5d-b6ba-4175-a7fa-273d0d87626e](https://github.com/user-attachments/assets/23fca9c9-a89c-4f85-b1ac-2a9077d8a4dd)
+
 Key Features: -Secure login over HTTPS
 
 -Ability to fill out a time slot
