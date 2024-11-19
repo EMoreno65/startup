@@ -14,7 +14,7 @@ export function Filters() {
     return (
         <div>
             <header>
-                <h1>Filters<sup>&reg;</sup></h1>
+                <h1>Filters</h1>
 
                 {/* Navigation */}
                 {/* <nav>

@@ -11,7 +11,7 @@ export function Index({ userName, authState, onAuthChange }) {
     <main className="container-fluid bg-secondary text-center">
       {/* Header Section */}
       <header className="bg-dark text-white py-3">
-        <h1>Ethan's Website<sup>&reg;</sup></h1>
+        <h1>Ethan's Website</h1>
         <nav>
           <ul className="nav justify-content-center">
             <li className="nav-item">

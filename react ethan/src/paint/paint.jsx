@@ -38,7 +38,7 @@ export function Paint() {
   return (
     <div>
       <header>
-        <h1>Find Your Time<sup>&reg;</sup></h1>
+        <h1>Find Your Time</h1>
         <hr />
       </header>
 

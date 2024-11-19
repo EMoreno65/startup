@@ -5,7 +5,7 @@ export function About() {
     <div>
       <header>
         <h1>
-          Ethan Clement<sup>&reg;</sup>
+          Ethan's Website
         </h1>
 
         {/* <nav>

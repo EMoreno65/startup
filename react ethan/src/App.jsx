@@ -23,9 +23,6 @@ function App() {
       <div className='bg-dark text-light'>
         <header className='container-fluid'>
           <nav className='navbar navbar-expand-lg navbar-dark'>
-            <div className='navbar-brand'>
-              Simon<sup>&reg;</sup>
-            </div>
             <div className='navbar-nav'>
               <NavLink className='nav-link' to='/'>
                 Home
