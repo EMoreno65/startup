@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Paint.css'; 
 import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
+// import {updatePrefTime} from '../../../service/index.js'
 
 export function Paint() {
   
@@ -14,6 +15,11 @@ export function Paint() {
         [buttonLabel]: !prevState[buttonLabel], 
       };
 
+      const isActive = !prevState[buttonLabel];
+
+      // if (isActive) {
+      //   updatePrefTime(buttonLabel);
+      // }
       if (!prevState[buttonLabel]) {
         setRecommendedTime(buttonLabel); 
       } else {
