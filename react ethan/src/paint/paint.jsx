@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Paint.css'; 
 import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
-// import {updatePrefTime} from '../../../service/index.js'
+// import {updatePrefTime} from '../../service/index.js'
 
 export function Paint() {
   
