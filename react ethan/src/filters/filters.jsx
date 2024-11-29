@@ -6,9 +6,39 @@ export function Filters() {
     const [people, setPeople] = useState('');
     const [timeOfDay, setTimeOfDay] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Filters:', { hours, people, timeOfDay });
+        
+        // Ensure hours and people are valid numbers before sending them to the backend
+        const parsedHours = parseInt(hours);
+        const parsedPeople = parseInt(people);
+        
+        if (isNaN(parsedHours) || isNaN(parsedPeople) || !timeOfDay) {
+            console.error('Invalid input');
+            return;
+        }
+    
+        const filterData = { hours: parsedHours, people: parsedPeople, timeOfDay };
+    
+        try {
+            // POST request to save filter data
+            const response = await fetch('/api/filters', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(filterData),
+            });
+    
+            if (response.ok) {
+                console.log('Filters saved successfully:', filterData);
+            } else {
+                const errorData = await response.json();
+                console.error('Error saving filters:', errorData);
+            }
+        } catch (err) {
+            console.error('Network error:', err);
+        }
     };
 
     return (
