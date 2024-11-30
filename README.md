@@ -76,4 +76,18 @@ React Deliverable
 
 - Uses the useState and authState hook which determines how the website functions based off if it is authenticated or unauthenticated.
 
-- I synchronized the individual buttons and group buttons to determine the best time. It will take in multiple inputs when I implement the websocket. 
+- I synchronized the individual buttons and group buttons to determine the best time. It will take in multiple inputs when I implement the websocket.
+
+Startup Service 
+
+- The main changes I made is that I added all the login, logout, and register functionality through the backend. On top of that, I made it so the submitted filters in filters and selected times in paint work through the backend to do a series of calculations that determines the best recommended time. For instance, if the filter says to do a time in the afternoon, it will only recommend times that are within the range from noon to 6. It takes all the selected times in paint and filters those times through the filters to determine the best time. 
+
+- Node.js/Express HTTP service completed
+  
+- Static middleware for frontend completed
+  
+- Calls to third party endpoints completed
+
+- Backend service endpoints - I've had placeholders for login as well as a system that determines a recommended time based on the person's filters and time selections that is calculated through the back end.
+
+- Front end calls - Service endpoints. I did this using fetch as well as calling a backend function occasionally. 
