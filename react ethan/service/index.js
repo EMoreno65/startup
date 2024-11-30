@@ -125,12 +125,10 @@ app.listen(port, () => {
 //   return scores;
 // }
 
-// Get All Filters
 apiRouter.get('/filters', (_req, res) => {
   res.send(filters);
 });
 
-// Update Preferred Times
 apiRouter.post('/paint', (req, res) => {
   const { newTime } = req.body;
   if (!newTime) {
@@ -142,17 +140,14 @@ apiRouter.post('/paint', (req, res) => {
   res.send({ preferred_times, bestTime });
 });
 
-// Helper function to calculate best time based on filters
 function selectBestTime(filters, selectedTimes) {
   console.log(filters)
-  // Define possible time slots
   const timeSlots = {
     morning: ['7-8', '8-9', '9-10', '10-11', '11-12'],
     afternoon: ['12-1', '1-2', '2-3', '3-4', '4-5'],
     evening: ['6-7', '7-8', '8-9', '9-10', '10-11'],
   };
 
-  // Aggregate the filters to make a decision
   let bestTime = '';
   filters.forEach(filter => {
     const { hours, people, timeOfDay } = filter;
@@ -170,7 +165,26 @@ function selectBestTime(filters, selectedTimes) {
       } else {
         console.log('No matches found.');
       }
-      console.log(bestTime)
+    }
+    if (timeOfDay === 'afternoon'){
+      const matches = timeSlotList.filter((time) => selectedTimes.includes(time));
+      if (matches.length > 0) {
+        console.log('Matching times:', matches);
+          console.log(Math.floor(13/2))
+          bestTime = matches[Math.floor(length(matches) / 2)];
+      } else {
+        console.log('No matches found.');
+      }
+    }
+    if (timeOfDay == "evening"){
+      const matches = timeSlotList.filter((time) => selectedTimes.includes(time));
+      if (matches.length > 0) {
+        console.log('Matching times:', matches);
+          console.log(Math.floor(13/2))
+          bestTime = matches[length(matches) - 1];
+      } else {
+        console.log('No matches found.');
+      }
     }
 
   });

@@ -9,7 +9,6 @@ export function Filters() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        // Ensure hours and people are valid numbers before sending them to the backend
         const parsedHours = parseInt(hours);
         const parsedPeople = parseInt(people);
         
@@ -21,7 +20,6 @@ export function Filters() {
         const filterData = { hours: parsedHours, people: parsedPeople, timeOfDay };
     
         try {
-            // POST request to save filter data
             const response = await fetch('/api/filters', {
                 method: 'POST',
                 headers: {

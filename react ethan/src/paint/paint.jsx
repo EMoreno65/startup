@@ -6,20 +6,17 @@ export function Paint() {
   const [activeButtons, setActiveButtons] = useState({});
   const [recommendedTime, setRecommendedTime] = useState('');
 
-  // Toggle button state and send selected times to the backend for best time calculation
   const toggleButton = (buttonLabel) => {
     setActiveButtons((prevState) => {
       const updatedState = {
         ...prevState,
-        [buttonLabel]: !prevState[buttonLabel], // Toggle the button's state
+        [buttonLabel]: !prevState[buttonLabel], 
       };
 
-      // Collect selected times (active buttons)
       const selectedTimes = Object.keys(updatedState).filter(
         (label) => updatedState[label]
       );
 
-      // Update recommended time based on selected times
       fetchRecommendedTime(selectedTimes);
 
       console.log(selectedTimes)
@@ -31,16 +28,16 @@ export function Paint() {
   const fetchRecommendedTime = async (selectedTimes) => {
     try {
       const response = await fetch('/api/best-time', {
-        method: 'POST', // Use POST instead of GET
+        method: 'POST', 
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ selectedTimes }), // Send selected times in the body
+        body: JSON.stringify({ selectedTimes }), 
       });
   
       if (response.ok) {
         const data = await response.json();
-        setRecommendedTime(data.bestTime); // Update the recommended time with the response from the backend
+        setRecommendedTime(data.bestTime); 
       } else {
         console.error('Failed to fetch best time');
       }
@@ -51,8 +48,7 @@ export function Paint() {
   
 
   const buttonGroups = [
-    ['AM', '12-1', '1-2', '2-3', '3-4', '4-5', '5-6'],
-    ['AM', '6-7', '7-8', '8-9', '9-10', '10-11', '11-12'],
+    ['AM', '7-8', '8-9', '9-10', '10-11', '11-12'],
     ['PM', '12-1', '1-2', '2-3', '3-4', '4-5', '5-6'],
     ['PM', '6-7', '7-8', '8-9', '9-10', '10-11', '11-12'],
   ];
