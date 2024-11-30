@@ -159,11 +159,13 @@ function selectBestTime(filters, selectedTimes) {
     console.log(timeOfDay)
     const timeSlotList = timeSlots[timeOfDay] || [];
 
-    console.log(timeSlotList)
+    console.log("Current time slot list", timeSlotList)
+    console.log("Currently selected times", selectedTimes)
 
-    if (timeSlotList.length > 0 && hours <= 5 && people <= 5) {
-      bestTime = timeSlotList[0]; 
+    if (timeOfDay == 'morning'){
+      console.log("This worked successfully")
     }
+
   });
 
   return bestTime;
