@@ -71,7 +71,7 @@ export function Filters() {
                         value={hours}
                         onChange={(e) => setHours(e.target.value)}
                     >
-                        {[...Array(12).keys()].map((i) => (
+                        {[...Array(4).keys()].map((i) => (
                             <option key={i} value={i + 1}>
                                 {i + 1}
                             </option>

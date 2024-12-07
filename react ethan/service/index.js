@@ -156,6 +156,7 @@ function selectBestTime(filters, selectedTimes) {
 
     console.log("Current time slot list", timeSlotList)
     console.log("Currently selected times", selectedTimes)
+    i = hours
 
     if (timeOfDay === 'morning') {
       const matches = timeSlotList.filter((time) => selectedTimes.includes(time));
@@ -171,7 +172,7 @@ function selectBestTime(filters, selectedTimes) {
       if (matches.length > 0) {
         console.log('Matching times:', matches);
           console.log(Math.floor(13/2))
-          bestTime = matches[Math.floor(length(matches) / 2)];
+          bestTime = matches[Math.floor(matches.length / 2)];
       } else {
         console.log('No matches found.');
       }
@@ -180,8 +181,7 @@ function selectBestTime(filters, selectedTimes) {
       const matches = timeSlotList.filter((time) => selectedTimes.includes(time));
       if (matches.length > 0) {
         console.log('Matching times:', matches);
-          console.log(Math.floor(13/2))
-          bestTime = matches[length(matches) - 1];
+          bestTime = matches[matches.length - 1];
       } else {
         console.log('No matches found.');
       }
