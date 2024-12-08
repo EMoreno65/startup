@@ -2,6 +2,7 @@ const express = require('express');
 const uuid = require('uuid');
 const app = express();
 const db = require('./database.js')
+const bcrypt = require('bcrypt');
 
 // The scores and users are saved in memory and disappear whenever the service is restarted.
 let users = {};
@@ -25,11 +26,10 @@ app.use(`/api`, apiRouter);
 // CreateAuth a new user
 apiRouter.post('/auth/create', async (req, res) => {
   if (await DB.getUser(req.body.email)) {
-    res.status(409).send({ msg: 'Existing user' });
+    res.status(409).send({ msg: 'This user already exists' });
   } else {
     const user = await DB.createUser(req.body.email, req.body.password);
 
-    // Set the cookie
     setAuthCookie(res, user.token);
 
     res.send({
@@ -40,7 +40,7 @@ apiRouter.post('/auth/create', async (req, res) => {
 
 // GetAuth login an existing user
 apiRouter.post('/auth/login', async (req, res) => {
-  const user = users[req.body.email];
+  const user = await db.getUser(req.body.email);
   if (user) {
     if (req.body.password === user.password) {
       user.token = uuid.v4();

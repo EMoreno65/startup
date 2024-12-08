@@ -38,6 +38,10 @@ const authToken_collection = db.collection('authTokens');
     return userCollection.findOne({ token: token });
   }
 
+//   function addTokenToDB(token) {
+//     authToken_collection.insertOne(token)
+//   }
+
 //   await collection.deleteMany({}); // Delete this at somepoint
   // Insert a document
   const house = {
