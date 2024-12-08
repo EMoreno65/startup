@@ -1,10 +1,8 @@
 const { MongoClient } = require('mongodb');
 const bcrypt = require('bcrypt');
 const uuid = require('uuid');
-// const config = require('./dbConfig.json');
-
-// Connect to the database cluster
-const url = `mongodb+srv://EthanMoreno:SecretPassword@mycluster.fkvtv.mongodb.net`;
+const config = require('./dbConfig.json');
+const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
 const client = new MongoClient(url);
 const db = client.db('user_base');
 const email_collection = db.collection('usernames');
