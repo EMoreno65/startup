@@ -1,4 +1,5 @@
 const { MongoClient } = require('mongodb');
+const bcrypt = require('bcrypt');
 const uuid = require('uuid');
 // const config = require('./dbConfig.json');
 
@@ -6,9 +7,8 @@ const uuid = require('uuid');
 const url = `mongodb+srv://EthanMoreno:SecretPassword@mycluster.fkvtv.mongodb.net`;
 const client = new MongoClient(url);
 const db = client.db('user_base');
-const username_collection = db.collection('usernames');
-const password_collection = db.collection('passwords');
-const authToken_collection = db.collection('authTokens');
+const email_collection = db.collection('usernames');
+// const authToken_collection = db.collection('authTokens');
 
   // Test that you can connect to the database
 (async function testConnection() {
@@ -26,16 +26,17 @@ const authToken_collection = db.collection('authTokens');
       password: passwordHash,
       token: uuid.v4(),
     };
-    await userCollection.insertOne(user);
+    await email_collection.insertOne(user);
+    console.log()
     return user;
   }
 
   function getUser(email) {
-    return userCollection.findOne({ email: email });
+    return email_collection.findOne({ email: email });
   }
   
   function getUserByToken(token) {
-    return userCollection.findOne({ token: token });
+    return email_collection.findOne({ token: token });
   }
 
 //   function addTokenToDB(token) {
@@ -44,26 +45,26 @@ const authToken_collection = db.collection('authTokens');
 
 //   await collection.deleteMany({}); // Delete this at somepoint
   // Insert a document
-  const house = {
-    name: 'Beachfront views',
-    summary: 'From your bedroom to the beach, no shoes required',
-    property_type: 'Condo',
-    beds: 1,
-  };
-  await collection.insertOne(house);
+//   const house = {
+//     name: 'Beachfront views',
+//     summary: 'From your bedroom to the beach, no shoes required',
+//     property_type: 'Condo',
+//     beds: 1,
+//   };
+//   await collection.insertOne(house);
 
-  // Query the documents
-  const query = { property_type: 'Condo', beds: { $lt: 2 } };
-  const options = {
-    sort: { score: -1 },
-    limit: 10,
-  };
+//   // Query the documents
+//   const query = { property_type: 'Condo', beds: { $lt: 2 } };
+//   const options = {
+//     sort: { score: -1 },
+//     limit: 10,
+//   };
 
-  const cursor = collection.find(query, options);
-  const rentals = await cursor.toArray();
-  rentals.forEach((i) => console.log(i));
+//   const cursor = collection.find(query, options);
+//   const rentals = await cursor.toArray();
+//   rentals.forEach((i) => console.log(i));
 
-main().catch(console.error);
+// main().catch(console.error);
 
 module.exports = {
     createUser,
