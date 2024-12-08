@@ -1,6 +1,7 @@
 const express = require('express');
 const uuid = require('uuid');
 const app = express();
+const db = require('./database.js')
 
 // The scores and users are saved in memory and disappear whenever the service is restarted.
 let users = {};
@@ -23,14 +24,17 @@ app.use(`/api`, apiRouter);
 
 // CreateAuth a new user
 apiRouter.post('/auth/create', async (req, res) => {
-  const user = users[req.body.email];
-  if (user) {
+  if (await DB.getUser(req.body.email)) {
     res.status(409).send({ msg: 'Existing user' });
   } else {
-    const user = { email: req.body.email, password: req.body.password, token: uuid.v4() };
-    users[user.email] = user;
+    const user = await DB.createUser(req.body.email, req.body.password);
 
-    res.send({ token: user.token });
+    // Set the cookie
+    setAuthCookie(res, user.token);
+
+    res.send({
+      id: user._id,
+    });
   }
 });
 
@@ -206,3 +210,5 @@ apiRouter.post('/best-time', (req, res) => {
 
   res.send({ bestTime }); // Send the best time back to the frontend
 });
+
+db.main().catch(console.error);
