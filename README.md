@@ -107,3 +107,5 @@ DB/Login Service
 - MongoDB works properly and associates with my code!
 
 - Creates a new user in the database when you select enter.
+
+- Cannot proceed to filters page unless you're logged in so a lack of logging in prevents functionality.
