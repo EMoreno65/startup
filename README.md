@@ -90,4 +90,20 @@ Startup Service
 
 - Backend service endpoints - I've had placeholders for login as well as a system that determines a recommended time based on the person's filters and time selections that is calculated through the back end.
 
-- Front end calls - Service endpoints. I did this using fetch as well as calling a backend function occasionally. 
+- Front end calls - Service endpoints. I did this using fetch as well as calling a backend function occasionally.
+
+DB/Login Service
+
+- I changed the program so that I implemented a MongoDB database and successfully connected it to my code.
+
+- Login Page stores a list of emails.
+
+- Encrypts passwords when a user logs in.
+
+- Removes email from database upon a logout.
+
+- Checks to see if a user is in the database when it attempts to login.
+
+- MongoDB works properly and associates with my code!
+
+- Creates a new user in the database when you select enter.
