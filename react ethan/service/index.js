@@ -4,7 +4,7 @@ const uuid = require('uuid');
 const app = express();
 const db = require('./database.js')
 const bcrypt = require('bcrypt');
-// const { peerProxy } = require('./peerProxy.js');
+const { peerProxy } = require('./peerProxy.js');
 
 const authCookieName = 'token';
 
@@ -15,7 +15,7 @@ let bestTime = 0
 let preferred_times = []
 let filters = []
 // The service port. In production the front-end code is statically hosted by the service on the same port.
-const port = process.argv.length > 2 ? process.argv[2] : 4001;
+const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 // JSON body parsing using built-in middleware
 app.use(express.json());
@@ -247,6 +247,8 @@ function setAuthCookie(res, authToken) {
 const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+console.log("The error is before peer proxy")
 
 peerProxy(httpService);
 
