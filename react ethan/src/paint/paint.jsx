@@ -1,17 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './Paint.css'; 
+import './Paint.css';
 import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
-import PaintNotifier from './PaintNotifier';
+import PaintNotifier from './PaintNotifier';  
 
-useEffect(() => {
-  // Notify the server when the user joins
-  PaintNotifier.sendJoinRequest();
-
-  // Cleanup: Notify when the user leaves
-  return () => {
-    PaintNotifier.sendLeaveRequest();
-  };
-}, []);
+const paintNotifier = new PaintNotifier(); 
 
 export function Paint() {
   const [activeButtons, setActiveButtons] = useState({});
@@ -21,7 +13,7 @@ export function Paint() {
     setActiveButtons((prevState) => {
       const updatedState = {
         ...prevState,
-        [buttonLabel]: !prevState[buttonLabel], 
+        [buttonLabel]: !prevState[buttonLabel],
       };
 
       const selectedTimes = Object.keys(updatedState).filter(
@@ -30,7 +22,9 @@ export function Paint() {
 
       fetchRecommendedTime(selectedTimes);
 
-      PaintNotifier.sendButtonRequest(buttonLabel, updatedState[buttonLabel]);
+      paintNotifier.sendButtonRequest(buttonLabel, 'User123', 'Button selected');
+
+      console.log(selectedTimes);
 
       return updatedState;
     });
@@ -39,16 +33,16 @@ export function Paint() {
   const fetchRecommendedTime = async (selectedTimes) => {
     try {
       const response = await fetch('/api/best-time', {
-        method: 'POST', 
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ selectedTimes }), 
+        body: JSON.stringify({ selectedTimes }),
       });
-  
+
       if (response.ok) {
         const data = await response.json();
-        setRecommendedTime(data.bestTime); 
+        setRecommendedTime(data.bestTime);
       } else {
         console.error('Failed to fetch best time');
       }
@@ -56,13 +50,20 @@ export function Paint() {
       console.error('Error fetching best time:', err);
     }
   };
-  
 
   const buttonGroups = [
     ['AM', '7-8', '8-9', '9-10', '10-11', '11-12'],
     ['PM', '12-1', '1-2', '2-3', '3-4', '4-5', '5-6'],
     ['PM', '6-7', '7-8', '8-9', '9-10', '10-11', '11-12'],
   ];
+
+  useEffect(() => {
+    paintNotifier.sendJoinRequest();
+
+    return () => {
+      paintNotifier.sendLeaveRequest();
+    };
+  }, []);
 
   return (
     <div>
@@ -106,7 +107,7 @@ export function Paint() {
       </div>
 
       <div className="button-container">
-        <NavLink className='nav-link' to='/filters'>
+        <NavLink className="nav-link" to="/filters">
           Go Back
         </NavLink>
         <span>Recommended Time:</span>
@@ -127,6 +128,7 @@ export function Paint() {
     </div>
   );
 }
+
 
 
 
