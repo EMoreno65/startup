@@ -2,10 +2,10 @@ const { WebSocketServer } = require('ws');
 const uuid = require('uuid');
 
 function peerProxy(httpServer) {
+
   // Create a websocket object
   const wss = new WebSocketServer({ noServer: true });
 
-  console.log("The error is in creating the websocket server")
 
   // Handle the protocol upgrade from HTTP to WebSocket
   httpServer.on('upgrade', (request, socket, head) => {
@@ -14,7 +14,6 @@ function peerProxy(httpServer) {
     });
   });
 
-  console.log("The error is in upgrading the server")
 
   // Keep track of all the connections so we can forward messages
   let connections = [];
@@ -32,7 +31,6 @@ function peerProxy(httpServer) {
       });
     });
 
-    console.log("The error is in sending messages")
 
     // Remove the closed connection so we don't try to forward anymore
     ws.on('close', () => {
@@ -43,7 +41,6 @@ function peerProxy(httpServer) {
       }
     });
 
-    console.log("The error is in removing closed connections")
 
     // Respond to pong messages by marking the connection alive
     ws.on('pong', () => {
