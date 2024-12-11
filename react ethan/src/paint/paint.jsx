@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Paint.css';
-import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
+import { BrowserRouter, NavLink } from 'react-router-dom';
 import PaintNotifier from './PaintNotifier';  
 
 const paintNotifier = new PaintNotifier(); 
@@ -8,7 +8,9 @@ const paintNotifier = new PaintNotifier();
 export function Paint() {
   const [activeButtons, setActiveButtons] = useState({});
   const [recommendedTime, setRecommendedTime] = useState('');
+  const [messages, setMessages] = useState([]); // Step 1: Add state for messages
 
+  // Function to handle button toggle
   const toggleButton = (buttonLabel) => {
     setActiveButtons((prevState) => {
       const updatedState = {
@@ -30,6 +32,7 @@ export function Paint() {
     });
   };
 
+  // Fetch recommended time from server
   const fetchRecommendedTime = async (selectedTimes) => {
     try {
       const response = await fetch('/api/best-time', {
@@ -57,6 +60,22 @@ export function Paint() {
     ['PM', '6-7', '7-8', '8-9', '9-10', '10-11', '11-12'],
   ];
 
+  // Step 2: Handle WebSocket messages
+  useEffect(() => {
+    const handleMessage = (event) => {
+      console.log("Received WebSocket message:", event);
+      setMessages((prevMessages) => [...prevMessages, event]); // Update messages state
+    };
+
+    paintNotifier.addHandler(handleMessage); // Add handler for WebSocket messages
+
+    // Cleanup function to remove handler
+    return () => {
+      paintNotifier.removeHandler(handleMessage);
+    };
+  }, []);
+
+  // Initial join/leave requests for PaintNotifier
   useEffect(() => {
     paintNotifier.sendJoinRequest();
 
@@ -119,6 +138,15 @@ export function Paint() {
         />
       </div>
 
+      <div className="messages-container">
+        <h3>Messages:</h3>
+        <ul>
+          {messages.map((message, index) => (
+            <li key={index}>{JSON.stringify(message)}</li>
+          ))}
+        </ul>
+      </div>
+
       <footer>
         <hr />
         <span className="text-reset">Ethan Moreno</span>
@@ -128,6 +156,7 @@ export function Paint() {
     </div>
   );
 }
+
 
 
 

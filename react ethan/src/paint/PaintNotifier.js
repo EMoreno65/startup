@@ -21,6 +21,7 @@ class PaintNotifier {
     let port = window.location.port;
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
     this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
+    console.log("attempted to create the new websocket")
     
     this.socket.onopen = () => {
       console.log("WebSocket connection established.");
@@ -45,6 +46,8 @@ class PaintNotifier {
   sendMessage(message) {
     const messageString = JSON.stringify(message);
     if (this.socket.readyState === WebSocket.OPEN) {
+      console.log("It should have sent a message")
+      console.log(messageString)
       this.socket.send(messageString);
     } else {
       console.warn("WebSocket not open, queuing message.");
