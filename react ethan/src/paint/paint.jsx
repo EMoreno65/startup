@@ -1,6 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './Paint.css'; 
 import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
+import PaintNotifier from './PaintNotifier';
+
+useEffect(() => {
+  // Notify the server when the user joins
+  PaintNotifier.sendJoinRequest();
+
+  // Cleanup: Notify when the user leaves
+  return () => {
+    PaintNotifier.sendLeaveRequest();
+  };
+}, []);
 
 export function Paint() {
   const [activeButtons, setActiveButtons] = useState({});
@@ -19,7 +30,7 @@ export function Paint() {
 
       fetchRecommendedTime(selectedTimes);
 
-      console.log(selectedTimes)
+      PaintNotifier.sendButtonRequest(buttonLabel, updatedState[buttonLabel]);
 
       return updatedState;
     });
