@@ -109,3 +109,11 @@ DB/Login Service
 - Creates a new user in the database when you select enter.
 
 - Cannot proceed to filters page unless you're logged in so a lack of logging in prevents functionality.
+
+Websocket Service
+
+- Backend listens for WebSocket connection.
+  
+- Frontend makes WebSocket connection.
+
+- Data sent over WebSocket connection. In the paint page, when a button is pressed, it sends a message through the websocket to indicate that the user has selected that button. Unfortunately I couldn't find how to make it so the logged in user's username showed up but the messages do go through and the buttons are all specifically specified. 
