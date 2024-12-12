@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button';
 
 import './authenticated.css';
 
+const username = props.userName
+
 export function Authenticated(props) {
   const navigate = useNavigate();
 

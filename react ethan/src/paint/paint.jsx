@@ -3,17 +3,17 @@ import './Paint.css';
 import { BrowserRouter, NavLink } from 'react-router-dom';
 import PaintNotifier from './PaintNotifier';  
 // import { username } from '../App.jsx';
-// import { userName } from '../index';
+// import { username } from '../index/authenticated.jsx';
 
 const paintNotifier = new PaintNotifier(); 
 
 // In here, make a general message function
 
-export function Paint({ userName }) {
+export function Paint(props) {
+  const username = props.userName
   const [activeButtons, setActiveButtons] = useState({});
   const [recommendedTime, setRecommendedTime] = useState('');
   const [messages, setMessages] = useState([]); // Step 1: State for messages
-  console.log(userName)
 
   // Handling paint events
   useEffect(() => {
@@ -27,12 +27,15 @@ export function Paint({ userName }) {
     setMessages((prevMessages) => [...prevMessages, event]);
   }
 
-  // Function to handle sending custom messages
   const sendMessage = (selectedButton, user, message) => {
-    const newMessage = { selectedButton, user, message };
-    setMessages((prevMessages) => [...prevMessages, newMessage]); // Update messages state
-    paintNotifier.sendMessage(newMessage); // Send message via PaintNotifier
-  };
+    const formattedMessage = `${user} chose '${selectedButton}'`;
+    
+    console.log(formattedMessage); // Debug: log the formatted message
+    
+    setMessages((prevMessages) => [...prevMessages, formattedMessage]);
+
+    paintNotifier.sendMessage(formattedMessage);
+};
 
   // Function to handle button toggle
   const toggleButton = (buttonLabel) => {
@@ -48,7 +51,7 @@ export function Paint({ userName }) {
 
       fetchRecommendedTime(selectedTimes);
 
-      sendMessage(buttonLabel, 'User123', 'Button selected');
+      sendMessage(buttonLabel, 'User123', ' chose ');
 
       console.log(selectedTimes);
 
