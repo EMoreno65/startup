@@ -37,7 +37,6 @@ export function Paint(props) {
     paintNotifier.sendMessage(formattedMessage);
 };
 
-  // Function to handle button toggle
   const toggleButton = (buttonLabel) => {
     setActiveButtons((prevState) => {
       const updatedState = {
@@ -51,15 +50,13 @@ export function Paint(props) {
 
       fetchRecommendedTime(selectedTimes);
 
-      sendMessage(buttonLabel, 'User123', ' chose ');
+      sendMessage(buttonLabel, 'Unspecified User', ' chose ');
 
       console.log(selectedTimes);
 
       return updatedState;
     });
   };
-
-  // Fetch recommended time from server
   const fetchRecommendedTime = async (selectedTimes) => {
     try {
       const response = await fetch('/api/best-time', {
@@ -87,22 +84,19 @@ export function Paint(props) {
     ['PM', '6-7', '7-8', '8-9', '9-10', '10-11', '11-12'],
   ];
 
-  // Step 2: Handle WebSocket messages
   useEffect(() => {
     const handleMessage = (event) => {
       console.log("Received WebSocket message:", event);
       setMessages((prevMessages) => [...prevMessages, event]); // Update messages state
     };
 
-    paintNotifier.addHandler(handleMessage); // Add handler for WebSocket messages
+    paintNotifier.addHandler(handleMessage); 
 
-    // Cleanup function to remove handler
     return () => {
       paintNotifier.removeHandler(handleMessage);
     };
   }, []);
 
-  // Initial join/leave requests for PaintNotifier
   useEffect(() => {
     paintNotifier.sendJoinRequest();
 
