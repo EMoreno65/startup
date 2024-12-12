@@ -1,11 +1,12 @@
+
 import React from 'react';
 import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Filters } from './filters/filters';
-import { Index } from './index/index'; 
+import { Index } from './index/index';
 import { About } from './about/about';
-import { Paint } from './paint/paint'; 
+import { Paint } from './paint/paint';
 
 export const AuthState = {
   Authenticated: 'authenticated',
@@ -17,6 +18,13 @@ function App() {
   const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
   const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
   const [authState, setAuthState] = React.useState(currentAuthState);
+
+  // Function to handle login/logout state change
+  const onAuthChange = (newUserName, newAuthState) => {
+    setUserName(newUserName);
+    setAuthState(newAuthState);
+    localStorage.setItem('userName', newUserName); // Store username in localStorage for persistence
+  };
 
   return (
     <BrowserRouter>

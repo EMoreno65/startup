@@ -2,22 +2,26 @@ import React, { useState, useEffect } from 'react';
 import './Paint.css';
 import { BrowserRouter, NavLink } from 'react-router-dom';
 import PaintNotifier from './PaintNotifier';  
+// import { username } from '../App.jsx';
+// import { userName } from '../index';
 
 const paintNotifier = new PaintNotifier(); 
 
 // In here, make a general message function
 
-export function Paint() {
+export function Paint({ userName }) {
   const [activeButtons, setActiveButtons] = useState({});
   const [recommendedTime, setRecommendedTime] = useState('');
   const [messages, setMessages] = useState([]); // Step 1: State for messages
+  console.log(userName)
 
-  React.useEffect(() => {
+  // Handling paint events
+  useEffect(() => {
     paintNotifier.addHandler(handlePaintEvent);
     return () => {
       paintNotifier.removeHandler(handlePaintEvent);
     };
-  });
+  }, []);
 
   function handlePaintEvent(event) {
     setMessages((prevMessages) => [...prevMessages, event]);
