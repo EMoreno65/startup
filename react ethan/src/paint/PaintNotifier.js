@@ -46,11 +46,8 @@ class PaintNotifier {
   sendMessage(message) {
     const messageString = JSON.stringify(message);
     if (this.socket.readyState === WebSocket.OPEN) {
-      console.log("It should have sent a message")
-      console.log(messageString)
       this.socket.send(messageString);
     } else {
-      console.warn("WebSocket not open, queuing message.");
       this.messageQueue.push(messageString);
     }
   }
@@ -85,7 +82,11 @@ class PaintNotifier {
 
   receiveEvent(event) {
     this.events.push(event);
-    this.handlers.forEach((handler) => handler(event));
+    this.events.forEach((e) => {
+      this.handlers.forEach((handler) => {
+        handler(e);
+      });
+    });
   }
 }
 

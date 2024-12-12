@@ -5,10 +5,30 @@ import PaintNotifier from './PaintNotifier';
 
 const paintNotifier = new PaintNotifier(); 
 
+// In here, make a general message function
+
 export function Paint() {
   const [activeButtons, setActiveButtons] = useState({});
   const [recommendedTime, setRecommendedTime] = useState('');
-  const [messages, setMessages] = useState([]); // Step 1: Add state for messages
+  const [messages, setMessages] = useState([]); // Step 1: State for messages
+
+  React.useEffect(() => {
+    paintNotifier.addHandler(handlePaintEvent);
+    return () => {
+      paintNotifier.removeHandler(handlePaintEvent);
+    };
+  });
+
+  function handlePaintEvent(event) {
+    setMessages((prevMessages) => [...prevMessages, event]);
+  }
+
+  // Function to handle sending custom messages
+  const sendMessage = (selectedButton, user, message) => {
+    const newMessage = { selectedButton, user, message };
+    setMessages((prevMessages) => [...prevMessages, newMessage]); // Update messages state
+    paintNotifier.sendMessage(newMessage); // Send message via PaintNotifier
+  };
 
   // Function to handle button toggle
   const toggleButton = (buttonLabel) => {
@@ -24,7 +44,7 @@ export function Paint() {
 
       fetchRecommendedTime(selectedTimes);
 
-      paintNotifier.sendButtonRequest(buttonLabel, 'User123', 'Button selected');
+      sendMessage(buttonLabel, 'User123', 'Button selected');
 
       console.log(selectedTimes);
 
