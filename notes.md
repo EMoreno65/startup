@@ -314,3 +314,71 @@ React Startup
 - I learned I could use a NavLink which imports from react router dom to serve as a routing button
 - I learned I can synchronize buttons by setting an active buttons list
 - I learned how to use useState and setting authenticated and unauthenticated to make certain functions happen only in different states
+
+
+Notes for Final
+
+Default port for https, http, and ssh are 403, 80, and 22 respectively
+
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
+    </div>
+  );
+}
+
+export default Counter;
+
+
+Hook	Purpose
+useState	Adds state to a functional component.
+useEffect	Handles side effects like data fetching or subscriptions.
+useContext	Accesses values from React Context.
+useRef	Creates a reference to a DOM element or mutable value.
+useMemo	Memoizes expensive calculations to optimize performance.
+useCallback	Memoizes callback functions to prevent unnecessary re-renders.
+useReducer	Manages complex state logic using reducers (like Redux).
+useLayoutEffect	Similar to useEffect, but fires synchronously after DOM mutations.
+useImperativeHandle	Customizes the exposed instance value when using React.forwardRef.
+
+Hooks basically provide functionality to things that would otherwise be class specific
+
+package.json manages identifying the project and using dependencies. 
+
+fetch(url, options)
+  .then(response => response.json()) // Parse response as JSON
+  .then(data => console.log(data))   // Process the data
+  .catch(error => console.error('Error:', error));
+
+  fetch does this ^^^
+
+Node.js allows jaavscript code to be ran outside a browser and is ran on the backend
+
+pm2 allows you to monitor applications currently running in node.js - manages and keeps application online
+
+pm2 ls	List all of the hosted node processes
+pm2 monit	Visual monitor
+pm2 start index.js -n simon	Add a new process with an explicit name
+pm2 start index.js -n startup -- 4000	Add a new process with an explicit name and port parameter
+pm2 stop simon	Stop a process
+pm2 restart simon	Restart a process
+pm2 delete simon	Delete a process from being hosted
+pm2 delete all	Delete all processes
+pm2 save	Save the current processes across reboot
+pm2 restart all	Reload all of the processes
+pm2 restart simon --update-env	Reload process and update the node version to the current environment definition
+pm2 update	Reload pm2
+pm2 start env.js --watch --ignore-watch="node_modules"	Automatically reload service when index.js changes
+pm2 describe simon	Describe detailed process information
+pm2 startup	Displays the command to run to keep PM2 running after a reboot.
+pm2 logs simon	Display process logs
+pm2 env 0	Display environment variables for process. Use pm2 ls to get the process ID
+
+vite is a build tool where many things such as typescript, javascript and other things can be rolled up into a simple straightforward application
