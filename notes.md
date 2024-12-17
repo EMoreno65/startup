@@ -438,3 +438,5 @@ react component with react use state
 
 const [state, setState] = React.useState(initialValue); 
 State initializes, setState is  function to update values, and initial value is what it state it set to initially.
+
+linux daemon is a background process that runs without being controlled by the user
